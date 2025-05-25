@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.db
+*.sqlite3
+*.log       
+chains/__pycache__/
+chains/*.pyc
+chains/*.pyo        
