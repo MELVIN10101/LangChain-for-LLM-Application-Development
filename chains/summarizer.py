@@ -1,8 +1,9 @@
-from transformers import pipeline
+from langchain.prompts import PromptTemplate
+from chains.memory import get_llm
+template = PromptTemplate.from_template("Summarize the following text:\n{text}\n")
 
-# Load summarization pipeline using a well-suited model
-summarizer_pipeline = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+def summarize(text: str):
+    print(f"Summarizing text: {text}")
+    llm = get_llm()
+    return llm.invoke(template.format(text=text))
 
-def summarize(text: str) -> str:
-    result = summarizer_pipeline(text, max_length=130, min_length=30, do_sample=False)
-    return result[0]["summary_text"]
