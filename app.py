@@ -33,6 +33,6 @@ def run_all(input: TextInput):
     print("inside run_all function in app.py")
     return {
         "summary": summarize(input.text),
-        "sentiment": analyze_sentiment(input.text),
+        "sentiment": sentiment(input.text),
         "chat_reply": chat(input.user_id, input.text),
     }
